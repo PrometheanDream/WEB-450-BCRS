@@ -1,3 +1,26 @@
-<p>
-  sign-in-page works!
-</p>
+<div class="wrapper">
+  <h2>Welcome to Bob's Computer Repair Shop!</h2>
+  <div class="frm-login">
+    <mat-card class="login-panel frm-login-panel">
+      <mat-card-header class="frm-login-header">
+      </mat-card-header>
+
+      <mat-card-content class="frm-login-body">
+        <mat-form-field>
+          <input type="text" matInput placeholder="Username">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password">
+          <link href=""
+        </mat-form-field>
+        <br><br>
+      </mat-card-content>
+
+      <mat-card-actions class="frm-login-actions">
+        <button mat-raised-button class="btn-login">Cancel</button>
+        <button routerLink = "/quiz-selector" mat-raised-button class="btn-login">Sign In</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
