@@ -11,7 +11,7 @@ const fs = require('fs');
 const rfs = require('rotating-file-stream');
 const UUID = require('uuid');
 const Couchbase = require('couchbase');
-const Bcrypt = require('bcryptjs');
+//const Bcrypt = require('bcryptjs');
 const signIn = require('./routes/api-sign-in-page');
 
 
