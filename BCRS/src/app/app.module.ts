@@ -2,15 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import {MatFormFieldModule} from '@angular/material/form-field';
 // import {FormControl, Validators} from '@angular/forms';
-import {MatCardModule, MatCard} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material';
+import { MatCard} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule }    from '@angular/common/http';
-import { MatRadioModule } from '@angular/material/radio';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+
 
 
 
@@ -28,6 +24,14 @@ import { InvoiceSummaryPageComponent } from './invoice-summary-page/invoice-summ
 import { ProductStatisticsPageComponent } from './product-statistics-page/product-statistics-page.component';
 import { SecurityQuestionCreatePageComponent } from './security-question-create-page/security-question-create-page.component';
 import { SecurityQuestionReviewPageComponent } from './security-question-review-page/security-question-review-page.component';
+import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
+import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, MatCardModule, } from '@angular/material';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { LayoutModule, } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { RouterModule } from '@angular/router';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -56,9 +60,21 @@ import { SecurityQuestionReviewPageComponent } from './security-question-review-
     BrowserAnimationsModule,
     HttpClientModule,
     MatRadioModule,
-    FormsModule
-    
-    
+    FormsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSidenavModule,
+    LayoutModule,
+    MatListModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
