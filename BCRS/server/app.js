@@ -47,8 +47,8 @@ let app = express();
  */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ 'extended': 'true'}));
-app.use(express.static(path.join(__dirname, '../dist/nodequiz')));
-app.use('/', express.static(path.join(__dirname, '../dist/nodequiz')));
+app.use(express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
+app.use('/', express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use(morgan('combined', {stream: accessLogStream}));
 app.use('/api', homeRouter); // wires the homeController to localhost:3000/api
 
