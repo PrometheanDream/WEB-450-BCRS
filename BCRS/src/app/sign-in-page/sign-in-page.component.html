@@ -1,3 +1,44 @@
-<p>
-  sign-in-page works!
-</p>
+
+<div class="wrapper">
+  <h2>Welcome to Bob's Computer Repair Shop!</h2>
+  <div class="frm-login">
+    <mat-card class="login-panel frm-login-panel">
+      <mat-card-header class="frm-login-header">
+      </mat-card-header>
+
+      <mat-card-content class="frm-login-body">
+        <mat-form-field>
+          <input type="text" matInput placeholder="Username">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password">
+          <button routerLink = "/security-questions-page" mat-raised-button class="btn-login">Forgot Password</button>
+        </mat-form-field>
+        <br><br>
+      </mat-card-content>
+
+      <mat-card-actions class="frm-login-actions">
+        <button mat-raised-button class="btn-login">Cancel</button>
+        <button routerLink = "/user-management-page" mat-raised-button class="btn-login">Sign In</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<br>
+<br>
+
+
+
+<button routerLink="/about-us" mat-raised-button color="primary">About Us</button><br>
+<button routerLink="/account-registration" mat-raised-button color="primary">Account Registration</button><br>
+<button routerLink="/contact-us" mat-raised-button color="primary">Contact Us</button><br>
+<button routerLink="/forgot-password" mat-raised-button color="primary">Forgot Password</button> <br>
+<button routerLink="/invoice-summary" mat-raised-button color="primary">Invoice Summary</button><br>
+<button routerLink="/log-files" mat-raised-button color="primary">Log Files</button><br>
+<button routerLink="/product-stats" mat-raised-button color="primary">Product Stats</button><br>
+<button routerLink="/security-questions-create" mat-raised-button color="primary">Create Security Questions</button><br>
+<button routerLink="/security-questions-review" mat-raised-button color="primary">Review Security Questions</button><br>
+<button routerLink="/sign-in" mat-raised-button color="primary">Sign In</button><br>
+<button routerLink="/user-management" mat-raised-button color="primary">User Management</button>
