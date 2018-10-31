@@ -1,3 +1,60 @@
-<p>
-  security-question-create-page works!
-</p>
+<button routerLink="/sign-in" mat-raised-button color="primary">Sign In</button>
+
+<form>
+
+<mat-card class="security-question-card" >
+
+  <div class="log-in-form">
+      <h3>Select a question and provide an answer. </h3>
+      
+    <div>
+      <h4>First Question</h4>
+        <mat-form-field >
+            <mat-select placeholder="Security Question" [(ngModel)]="selectedQuestion" name="groupOne">
+                <mat-option *ngFor="let question of securityBankOne" [value]="question.value">
+                  {{question.viewValue}}
+                </mat-option>
+            </mat-select>        
+        </mat-form-field>
+        <p>{{ selectedQuestion }}</p>
+          <input  class="log-in-box" matInput placeholder="Enter your answer here" required>
+    </div>
+<br><br>
+    <div>
+        <h4>Second Question</h4>
+          <mat-form-field >
+              <mat-select placeholder="Security Question">
+                  <mat-option *ngFor="let question of securityBankTwo" [value]="question.value">
+                    {{question.viewValue}}
+                  </mat-option>
+                </mat-select>
+            
+        
+                </mat-form-field>
+                  <input  class="log-in-box" matInput placeholder="Enter your answer here" required>
+      </div>
+
+  </div>
+<br><br>
+  <div>
+      <h4>Third Question</h4>
+        <mat-form-field >
+            <mat-select placeholder="Security Question">
+                <mat-option *ngFor="let question of securityBankThree" [value]="question.value">
+                  {{question.viewValue}}
+                </mat-option>
+              </mat-select>
+          
+      
+              </mat-form-field>
+                <input  class="log-in-box" matInput placeholder="Enter your answer here" required>
+    </div>
+
+  <br>
+
+  <div class="log-in-button">
+    <button routerLink="/homepage" mat-raised-button color="primary">Submit</button>
+  </div>
+
+</mat-card>
+</form>

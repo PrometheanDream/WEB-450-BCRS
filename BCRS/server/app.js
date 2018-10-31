@@ -6,13 +6,16 @@ const morgan = require('morgan');
 const logger = require('./helpers/logger');
 const mongoose = require('mongoose');
 const config = require('./helpers/config');
+const cors = require('cors');
 const homeRouter = require('./routes/home-router');
 const fs = require('fs');
 const rfs = require('rotating-file-stream');
 const UUID = require('uuid');
 const Couchbase = require('couchbase');
 //const Bcrypt = require('bcryptjs');
+const jwt = require('./helpers/jwt-authentication');
 const signIn = require('./routes/api-sign-in-page');
+const errorHandler = require('./helpers/error-handler');
 
 
 
@@ -47,14 +50,17 @@ let app = express();
  */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ 'extended': 'true'}));
+app.use(cors());
 app.use(express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use('/', express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use(morgan('combined', {stream: accessLogStream}));
 app.use('/api', homeRouter); // wires the homeController to localhost:3000/api
+app.use(jwt());
 
 // User Sign In route
 
-
+// error handler pulls from the error-handler.js
+app.use(errorHandler);
 
 
 /**

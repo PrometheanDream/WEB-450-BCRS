@@ -32,6 +32,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { MatRadioModule } from '@angular/material/radio';
     LayoutModule,
     MatListModule,
     RouterModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
