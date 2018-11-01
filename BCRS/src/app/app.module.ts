@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 // import {FormControl, Validators} from '@angular/forms';
 import { MatCard} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -27,11 +27,12 @@ import { SecurityQuestionReviewPageComponent } from './security-question-review-
 import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
 import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, MatCardModule, } from '@angular/material';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
-import { LayoutModule, } from '@angular/cdk/layout';
+import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { MatRadioModule } from '@angular/material/radio';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { MatRadioModule } from '@angular/material/radio';
     InvoiceSummaryPageComponent,
     ProductStatisticsPageComponent,
     SecurityQuestionCreatePageComponent,
-    SecurityQuestionReviewPageComponent
+    SecurityQuestionReviewPageComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
