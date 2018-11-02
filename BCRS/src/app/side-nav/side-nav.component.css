@@ -25,10 +25,16 @@ span{
 }
 
 .mat-toolbar{
+  font-family: Quicksand;
+  font-weight: 200;
+  font-size: 20pt;
   text-align: center;
 }
 
 .mat-nav-list{
+  font-family: Quicksand;
+  font-weight: 200;
+  font-size: 20pt;
   text-align: left;
 }
 
