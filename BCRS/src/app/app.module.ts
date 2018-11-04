@@ -24,7 +24,7 @@ import { InvoiceSummaryPageComponent } from './invoice-summary-page/invoice-summ
 import { ProductStatisticsPageComponent } from './product-statistics-page/product-statistics-page.component';
 import { SecurityQuestionCreatePageComponent } from './security-question-create-page/security-question-create-page.component';
 import { SecurityQuestionReviewPageComponent } from './security-question-review-page/security-question-review-page.component';
-import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormGroup, Validators } from '../../node_modules/@angular/forms';
 import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, MatCardModule, } from '@angular/material';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -33,6 +33,7 @@ import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { MatRadioModule } from '@angular/material/radio';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -64,19 +65,18 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     MatRadioModule,
     FormsModule,
     ReactiveFormsModule,
-    FormsModule,
-    MatButtonModule,
-    MatCardModule,
     MatIconModule,
     MatMenuModule,
     MatToolbarModule,
-    MatRadioModule,
     MatFormFieldModule,
-    MatInputModule,
     MatSidenavModule,
     LayoutModule,
     MatListModule,
     RouterModule,
+    FormGroup,
+    Validators,
+    FormBuilder,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
