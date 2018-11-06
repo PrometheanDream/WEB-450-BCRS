@@ -13,10 +13,12 @@ const rfs = require('rotating-file-stream');
 const UUID = require('uuid');
 const Couchbase = require('couchbase');
 //const Bcrypt = require('bcryptjs');
-const jwt = require('./helpers/jwt-authentication');
+//const jwt = require('./helpers/demo-jwt-authentication');
 const signIn = require('./routes/api-sign-in-page');
-const errorHandler = require('./helpers/error-handler');
+//const errorHandler = require('./helpers/demo-error-handler');
 
+var apiUserManagementPage = require('./routes/api-user-management-page');
+var apiUserCreate = require('./routes/api-user-create')
 
 
 // Log File Writer
@@ -55,12 +57,16 @@ app.use(express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use('/', express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use(morgan('combined', {stream: accessLogStream}));
 app.use('/api', homeRouter); // wires the homeController to localhost:3000/api
-app.use(jwt());
+app.use('/api', apiUserManagementPage);
+app.use('/api', apiUserCreate);
+//app.use('/api', apiCatalog);
+
+//app.use(jwt());
 
 // User Sign In route
 
 // error handler pulls from the error-handler.js
-app.use(errorHandler);
+//app.use(errorHandler);
 
 
 /**

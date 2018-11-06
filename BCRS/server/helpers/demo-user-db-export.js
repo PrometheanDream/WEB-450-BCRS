@@ -4,5 +4,5 @@ mongoose.connect(config.connectionString);
 mongoose.Promise = global.Promise;
 
 module.exports = {
-    User: require('./models/user.model') //requires the user.model.js
+    User: require('./models/user_model') //requires the user.model.js
 };

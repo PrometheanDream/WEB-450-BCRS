@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }  from '@angular/core';
+import { HttpClient }         from '@angular/common/http';
 
 @Component({
   selector: 'app-user-management-page',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserManagementPageComponent implements OnInit {
 
-  constructor() { }
+users: any;
+
+  constructor(private http: HttpClient) {
+    this.http.get('/api/user-management').subscribe(data => { this.users = data ;});
+   }
 
   ngOnInit() {
   }

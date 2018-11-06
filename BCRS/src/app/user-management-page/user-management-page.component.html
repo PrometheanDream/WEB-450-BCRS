@@ -1,3 +1,13 @@
-<p>
-  user-management-page works!
-</p>
+<mat-card>
+    <div *ngFor="let data of users">
+      <p>{{ data.userId }}</p><br><br>
+      <p>{{ data.firstName }}</p><br><br>
+      <p>{{ data.lastName }}</p><br><br>
+      <p>{{ data.phoneNumber }}</p><br><br>
+      <p>{{ data.address }}</p><br><br>
+      <p>{{ data.emailAddress }}</p><br><br>
+      <p>{{ data.userName }}</p><br><br>
+      <p>{{ data.userPassword }}</p><br><br>
+    </div>
+   
+    </mat-card>

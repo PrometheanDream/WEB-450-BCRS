@@ -12,9 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./account-registration-page.component.css']
 })
 export class AccountRegistrationPageComponent implements OnInit {
-  submitForm: FormGroup;
-  loading = false;
-  submitted = false;
+
 
   
   constructor(
@@ -22,35 +20,10 @@ export class AccountRegistrationPageComponent implements OnInit {
     private router: Router,
     private http: HttpClient) { }
 
-  ngOnInit() {
-    this.submitForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
-      address: ['', Validators.required],
-      emailAddress: ['', Validators.required],
-      username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(7)]]
-  });
+  ngOnInit() {}
+
+
+      
+ 
+
   }
-
-      // convenience getter for easy access to form fields
-      get f() { return this.submitForm.controls; }
-
-      onSubmit(formData) {
-        this.submitted = true;
-
-        if (formData) {
-          console.log(formData.value)
-        }
-
-        // stops when invalid
-        if (this.submitForm.invalid) {
-            return;
-        }
-
-        this.loading = true;
-        
-    }
-
-}
