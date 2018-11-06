@@ -16,9 +16,14 @@ const Couchbase = require('couchbase');
 //const jwt = require('./helpers/demo-jwt-authentication');
 const signIn = require('./routes/api-sign-in-page');
 //const errorHandler = require('./helpers/demo-error-handler');
+var passport = require('passport');
+
+
+require('./models/db');
+require('./routes/config-users/passport');
 
 var apiUserManagementPage = require('./routes/api-user-management-page');
-var apiUserCreate = require('./routes/api-user-create')
+
 
 
 // Log File Writer
@@ -58,16 +63,23 @@ app.use('/', express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use(morgan('combined', {stream: accessLogStream}));
 app.use('/api', homeRouter); // wires the homeController to localhost:3000/api
 app.use('/api', apiUserManagementPage);
-app.use('/api', apiUserCreate);
+
 //app.use('/api', apiCatalog);
 
-//app.use(jwt());
+
+app.use(passport.initialize());
+//app.use('/api', index);
 
 // User Sign In route
 
 // error handler pulls from the error-handler.js
 //app.use(errorHandler);
-
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401);
+    res.json({"message" : err.name + ": " + err.message});
+  }
+});
 
 /**
  * Request handler
