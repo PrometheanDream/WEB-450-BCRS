@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="accent">Menu</mat-toolbar>
+    <mat-nav-list>
+        <button routerLink="/sign-in" mat-flat-button color="none">Home</button><br>
+    <!--<mat-menu #appMenu="matMenu">-->
+    <!--<button mat-menu-item><a href="https://mhoward14.github.io">Matthew Howard</a></button>-->
+    <!--<button mat-menu-item><a href="https://prometheandream.github.io/personal-portfolio/">William Simpson</a></button>-->
+    <!--</mat-menu>-->
+        <button routerLink="/about-us" mat-flat-button color="none">About Us</button><br>
+        <button routerLink="/log-files" mat-flat-button color="none">Log Files</button><br>
+        <button routerLink="/contact-us" mat-flat-button color="none">Contact Us</button><br>
+        <button routerLink="/product-stats" mat-flat-button color="none">Product Stats</button><br>
+        <button routerLink="/invoice-summary" mat-flat-button color="none">Invoice Summary</button><br>
+        <button routerLink="/user-management" mat-flat-button color="none">User Management</button><br>
+        <button routerLink="/account-registration" mat-flat-button color="none">Account Registration</button><br>
+        <button routerLink="/security-questions-create" mat-flat-button color="none">Create Security Questions</button><br>
+        <button routerLink="/security-questions-review" mat-flat-button color="none">Review Security Questions</button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="accent">
+      <span>Bob's Computer Repair Shop Employee Interface</span>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 // import {FormControl, Validators} from '@angular/forms';
 import { MatCard} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -25,15 +25,17 @@ import { InvoiceSummaryPageComponent } from './invoice-summary-page/invoice-summ
 import { ProductStatisticsPageComponent } from './product-statistics-page/product-statistics-page.component';
 import { SecurityQuestionCreatePageComponent } from './security-question-create-page/security-question-create-page.component';
 import { SecurityQuestionReviewPageComponent } from './security-question-review-page/security-question-review-page.component';
-import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormGroup, Validators } from '../../node_modules/@angular/forms';
 import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, MatCardModule, } from '@angular/material';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
-import { LayoutModule, } from '@angular/cdk/layout';
+import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import {MatSelectModule} from '@angular/material/select';
     InvoiceSummaryPageComponent,
     ProductStatisticsPageComponent,
     SecurityQuestionCreatePageComponent,
-    SecurityQuestionReviewPageComponent
+    SecurityQuestionReviewPageComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -64,20 +67,19 @@ import {MatSelectModule} from '@angular/material/select';
     MatRadioModule,
     FormsModule,
     ReactiveFormsModule,
-    FormsModule,
-    MatButtonModule,
-    MatCardModule,
     MatIconModule,
     MatMenuModule,
     MatToolbarModule,
-    MatRadioModule,
     MatFormFieldModule,
-    MatInputModule,
     MatSidenavModule,
     LayoutModule,
     MatListModule,
     RouterModule,
-    MatSelectModule
+    MatSelectModule,
+    //FormGroup,
+    //Validators,
+    //FormBuilder,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
