@@ -14,12 +14,11 @@ export class SignInPageComponent implements OnInit {
   submitted = false;
   returnUrl: string;
 
-  constructor SignInPageComponent(): SignInPageComponent
-        private formBuilder: FormBuilder;
-        private route: ActivatedRoute;
-        private router: Router;
-        private authenticationService: AuthenticationService;
-        private alertService: AlertService) {}
+  constructor(
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router,
+        private authenticationService: AuthenticationService) {}
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
@@ -53,7 +52,6 @@ export class SignInPageComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    this.alertService.error(error);
                     this.loading = false;
                 });
     }
