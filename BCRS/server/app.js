@@ -11,13 +11,7 @@ const homeRouter = require('./routes/home-router');
 const fs = require('fs');
 const rfs = require('rotating-file-stream');
 
-
-
-
-
 var apiUserManagementPage = require('./routes/api-user-management-page');
-
-
 
 // Log File Writer
 let logDirectory = path.join(__dirname, '../log');
