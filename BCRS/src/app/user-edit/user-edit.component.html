@@ -1,7 +1,43 @@
+<app-navbar></app-navbar>
+
+<h3>Update User Information</h3>
+<mat-card>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput placeholder="Email" type="text" [formControl]="form.controls['email']" />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Password" type="password" [formControl]="form.controls['password']" />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="First Name" type="text" [formControl]="form.controls['firstname']" />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Last Name" type="text" [formControl]="form.controls['lastname']" />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input matInput placeholder="Address" type="text" [formControl]="form.controls['address']" />
+        </mat-form-field>
+  
+        <br />
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </form>
+  </mat-card>
+
+  <h3>Current Information</h3>
 <ul>
-  <li>{{ user._id }}</li>
-  <li>{{ user.email }}</li>
-  <li>{{ user.first_name }}</li>
-  <li>{{ user.last_name }}</li>
-  <li>{{ user.address }}</li>
+  <li>ID: {{ user._id }}</li>
+  <li>Email: {{ user.email }}</li>
+  <li>First Name: {{ user.first_name }}</li>
+  <li>Last Name: {{ user.last_name }}</li>
+  <li>Address: {{ user.address }}</li>
 </ul>
+

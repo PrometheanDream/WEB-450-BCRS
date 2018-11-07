@@ -21,13 +21,15 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list'
 import { MatRadioModule } from '@angular/material/radio'
 import { MatSelectModule } from '@angular/material/select'
+import { MatTableModule } from '@angular/material/table'
 
 // custom app components
 import { UserComponent } from './user/user.component';
 import { NavbarComponent } from './core';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { AppRoutes } from './app.routing';
-import { UserCreateComponent } from './user-create/user-create.component'
+import { UserCreateComponent } from './user-create/user-create.component';
+import { SecurityQuestionnaireComponent } from './security-questionnaire/security-questionnaire.component'
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { UserCreateComponent } from './user-create/user-create.component'
     NavbarComponent,
     UserEditComponent,
     UserCreateComponent,
+    SecurityQuestionnaireComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import { UserCreateComponent } from './user-create/user-create.component'
     MatListModule,
     RouterModule,
     MatSelectModule,
+    MatTableModule,
     RouterModule.forRoot(AppRoutes, {useHash: true, enableTracing: false}),
   ],
   providers: [],

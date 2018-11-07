@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router'
 import { UserComponent } from './user/user.component'
 import { UserEditComponent } from './user-edit/user-edit.component'
 import {UserCreateComponent} from './user-create/user-create.component';
+import { SecurityQuestionnaireComponent } from './security-questionnaire/security-questionnaire.component';
 
 
 export const AppRoutes: Routes = [
@@ -20,6 +21,10 @@ export const AppRoutes: Routes = [
   {
     path: 'user-create',
     component: UserCreateComponent
+  },
+  {
+    path: 'questionnaire',
+    component: SecurityQuestionnaireComponent
   }
 ]
 

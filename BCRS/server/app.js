@@ -10,7 +10,8 @@ const config = require('./helpers/config');
 const cors = require('cors');
 const fs = require('fs');
 const rfs = require('rotating-file-stream');
-var userAPI = require('./routes/users-api')
+var userAPI = require('./routes/users-api');
+var securityQuestionnaireAPI = require('./routes/securityQuestionnaires-api');
 
 // Log File Writer
 let logDirectory = path.join(__dirname, '../log');
@@ -48,8 +49,11 @@ app.use(express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use('/', express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use(morgan('combined', {stream: accessLogStream}));
 
-
+//routes to users-api file
 app.use('/api/user', userAPI)
+
+// routes to the securityQuestionnaires-api file
+app.use('/api/questionnaire', securityQuestionnaireAPI)
 
 
 /**

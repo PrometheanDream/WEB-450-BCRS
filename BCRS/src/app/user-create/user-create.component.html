@@ -1,23 +1,26 @@
-<h2>Create new user </h2>
+<app-navbar></app-navbar>
+
+
 
 <mat-card>
+    <h2>Create new user </h2><br>
   <form [formGroup]="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
     <mat-card-content>
       <mat-form-field>
         <input matInput placeholder="Email" type="text" [formControl]="form.controls['email']" />
-      </mat-form-field>
+      </mat-form-field><br>
 
       <mat-form-field>
         <input matInput placeholder="Password" type="password" [formControl]="form.controls['password']" />
-      </mat-form-field>
+      </mat-form-field><br>
 
       <mat-form-field>
         <input matInput placeholder="First Name" type="text" [formControl]="form.controls['firstname']" />
-      </mat-form-field>
+      </mat-form-field><br>
 
       <mat-form-field>
         <input matInput placeholder="Last Name" type="text" [formControl]="form.controls['lastname']" />
-      </mat-form-field>
+      </mat-form-field><br>
 
       <mat-form-field>
         <input matInput placeholder="Address" type="text" [formControl]="form.controls['address']" />

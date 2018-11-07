@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+
+
+<mat-card>
+    <h2>Fill Out Security Questionnaire</h2><br>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <mat-card-content>
+
+        <p>What is your Mother's Maiden name?</p>
+      <mat-form-field>
+        <input matInput placeholder="Answer" type="text" [formControl]="form.controls['answer1']" />
+      </mat-form-field><br>
+
+      <p>What town were you born in?</p>
+      <mat-form-field>
+        <input matInput placeholder="Answer" type="text" [formControl]="form.controls['answer2']" />
+      </mat-form-field><br>
+
+      <p>What is your favorite color?</p>
+      <mat-form-field>
+        <input matInput placeholder="Answer" type="text" [formControl]="form.controls['answer3']" />
+      </mat-form-field><br>
+
+      <p>What is your favorite planet?</p>
+      <mat-form-field>
+        <input matInput placeholder="Answer" type="text" [formControl]="form.controls['answer4']" />
+      </mat-form-field>
+
+      <br />
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </form>
+</mat-card>

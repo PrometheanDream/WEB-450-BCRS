@@ -8,8 +8,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
+displayedColumns: string[] = ['_id', 'email', 'firstName', 'lastName', 'address', 'update', 'delete']
   users: any
+
+  
 
   constructor(private http: HttpClient, private router: Router) {
     this.http.get('/api/user').subscribe(data => {

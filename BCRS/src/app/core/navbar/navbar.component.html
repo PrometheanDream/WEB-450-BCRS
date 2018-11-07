@@ -9,6 +9,14 @@
 
   <mat-menu #user="matMenu" x-position="before">
 
+    <button [routerLink]="['/questionnaire']" mat-menu-item>
+      <mat-icon>question_answer</mat-icon>
+      Security Questions
+    </button>
+    <button [routerLink]="['/user-create']" mat-menu-item>
+      <mat-icon>person_add</mat-icon>
+      Register Account
+    </button>
     <button mat-menu-item>
       <mat-icon>settings</mat-icon>
       Settings
@@ -25,6 +33,7 @@
       <mat-icon>exit_to_app</mat-icon>
       Sign Out
     </button>
+  
   </mat-menu>
 
 </mat-toolbar>
