@@ -1,0 +1,30 @@
+<mat-toolbar>
+
+  <button mat-button [routerLink]="['/users']">Users</button>
+
+  <!-- User profile menu -->
+  <button [matMenuTriggerFor]="user" mat-icon-button class="ml-xs">
+    <mat-icon>person</mat-icon>
+  </button>
+
+  <mat-menu #user="matMenu" x-position="before">
+
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      Settings
+    </button>
+    <button mat-menu-item>
+      <mat-icon>account_box</mat-icon>
+      Profile
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      Disable notifications
+    </button>
+    <button mat-menu-item>
+      <mat-icon>exit_to_app</mat-icon>
+      Sign Out
+    </button>
+  </mat-menu>
+
+</mat-toolbar>

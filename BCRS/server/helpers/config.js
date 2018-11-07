@@ -13,8 +13,8 @@ config.web.secret = 'topsecret';
  *
  */
 config.database = {};
-config.database.username = 'williambcrs';
-config.database.password = '1qaz2wsx!QAZ@WSX';
+config.database.username = 'databaseuser1';
+config.database.password = 'databasepassword1';
 config.database.port = '41043';
 config.database.url = 'ds141043.mlab.com';
 config.database.name = 'bcrs';

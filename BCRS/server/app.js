@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const http = require('http');
 const createError = require('http-errors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -7,11 +8,9 @@ const logger = require('./helpers/logger');
 const mongoose = require('mongoose');
 const config = require('./helpers/config');
 const cors = require('cors');
-const homeRouter = require('./routes/home-router');
 const fs = require('fs');
 const rfs = require('rotating-file-stream');
-
-var apiUserManagementPage = require('./routes/api-user-management-page');
+var userAPI = require('./routes/users-api')
 
 // Log File Writer
 let logDirectory = path.join(__dirname, '../log');
@@ -31,8 +30,8 @@ mongoose.connect('mongodb://' + config.database.username + ':'
   + config.database.url + ':'
   + config.database.port + '/'
   + config.database.name, {promiseLibrary: require('bluebird'), useNewUrlParser: true})
-  .then(() => logger.debug('Connection to the MongoDB instance was successful'))
-  .catch((err) => logger.debug('MongoDB Error: ' + err));
+  .then(() => console.debug('Connection to the MongoDB instance was successful'))
+  .catch((err) => console.debug('MongoDB Error: ' + err.message))
 
 /**
  * Express
@@ -44,13 +43,13 @@ let app = express();
  */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ 'extended': 'true'}));
-app.use(cors());
+//app.use(cors());
 app.use(express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use('/', express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use(morgan('combined', {stream: accessLogStream}));
-app.use('/api', homeRouter); // wires the homeController to localhost:3000/api
-app.use('/api', apiUserManagementPage);
 
+
+app.use('/api/user', userAPI)
 
 
 /**
@@ -69,4 +68,8 @@ app.use(function (err, req, res, next) {
   res.sendStatus(err.status);
 });
 
-module.exports = app;
+http.createServer(app).listen(3000, function() {
+  console.log('Application started and listening on port 3000');
+});
+
+

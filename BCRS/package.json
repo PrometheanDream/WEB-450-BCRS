@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng build && node ./bin/www",
-    "devstart": "node ./bin/www",
+    "start": "ng build && node app.js",
+    "devstart": "node app.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -38,6 +38,7 @@
     "express-session": "^1.15.6",
     "http-errors": "^1.7.0",
     "jsonwebtoken": "^8.3.0",
+    "moment": "^2.22.2",
     "mongodb": "^3.0.10",
     "mongoose": "^5.2.9",
     "morgan": "^1.9.0",

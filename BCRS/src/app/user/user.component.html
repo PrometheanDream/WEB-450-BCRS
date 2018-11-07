@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<button mat-raised-button [routerLink]="['/user-create']">New User</button>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Address</th>
+    <th>Functions</th>
+  </tr>
+  <tbody *ngFor="let user of users">
+  <tr>
+    <td>{{ user._id }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.first_name }}</td>
+    <td>{{ user.last_name }}</td>
+    <td>{{ user.address }}</td>
+    <td>
+      <button mat-icon-button [routerLink]="['/user-edit', user._id]">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="onDelete(user._id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+    </td>
+  </tr>
+  </tbody>
+</table>
