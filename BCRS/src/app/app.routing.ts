@@ -1,11 +1,12 @@
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ROUTES } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { SecurityQuestionnaireComponent } from './security-questionnaire/security-questionnaire.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { NgModule } from '@angular/core';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ServerErrorComponent } from './server-error/server-error.component';
 
 
 export const AppRoutes: Routes = [
@@ -38,21 +39,11 @@ export const AppRoutes: Routes = [
     component: ContactUsComponent,
   },
   {
-    path: 'page-not-found',
-    loadChildren: './routes/page-not-found/page-not-found.module#PageNotFoundModule'
+    path: '**',
+    component: PageNotFoundComponent,
   },
   {
-    path: 'page-not-found',
-    redirectTo: 'page-not-found'
+    path: '**',
+    component: ServerErrorComponent,
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled',
-  })
-  ],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
-

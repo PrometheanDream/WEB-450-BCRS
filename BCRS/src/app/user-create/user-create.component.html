@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <mat-card>
-    <h2>Create new user </h2><br>
+  <h2>Create new user </h2><br>
   <form [formGroup]="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
     <mat-card-content>
       <mat-form-field>
@@ -26,7 +26,7 @@
 
       <br />
       <mat-card-actions>
-        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+        <button mat-raised-button color="accent" type="submit" [disabled]="!form.valid">Submit</button>
       </mat-card-actions>
     </mat-card-content>
   </form>

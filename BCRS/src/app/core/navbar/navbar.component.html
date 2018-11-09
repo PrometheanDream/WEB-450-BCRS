@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
 
   <button mat-button [routerLink]="['/users']">Users</button>
 
@@ -13,7 +13,7 @@
 
   <mat-menu #user="matMenu" x-position="before">
 
-    <button [routerLink]="['/questionnaire']" mat-menu-item>
+    <button color="accent" [routerLink]="['/questionnaire']" mat-menu-item>
       <mat-icon>question_answer</mat-icon>
       Security Questions
     </button>

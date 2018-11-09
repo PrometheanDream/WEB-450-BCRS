@@ -30,27 +30,27 @@
   <ng-container matColumnDef="update">
     <th mat-header-cell *matHeaderCellDef>Update</th>
     <td mat-cell *matCellDef="let user">
-        <button mat-icon-button [routerLink]="['/user-edit', user._id]">
-          <mat-icon>edit</mat-icon>
-        </button>
+      <button color="accent" mat-icon-button [routerLink]="['/user-edit', user._id]">
+        <mat-icon>edit</mat-icon>
+      </button>
     </td>
   </ng-container>
 
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef>Delete</th>
     <td mat-cell *matCellDef="let user">
-        <button mat-icon-button (click)="onDelete(user._id)">
-          <mat-icon>delete</mat-icon>
-        </button>
+      <button color="warn" mat-icon-button (click)="onDelete(user._id)">
+        <mat-icon>delete</mat-icon>
+      </button>
     </td>
   </ng-container>
- 
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
 </table>
 
-<button mat-raised-button [routerLink]="['/user-create']">New User</button>
+<button mat-raised-button color="accent" [routerLink]="['/user-create']">New User</button>
 
 
 <!--<button mat-raised-button [routerLink]="['/user-create']">New User</button>
