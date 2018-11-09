@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken');
 
 /*
   GET - localhost:3000/api/user
@@ -30,7 +32,18 @@ router.get('/:id', function(req, res, next) {
   })
 })
 
-// POST
+// Verify token on GET
+exports.user_token = function(req, res) {
+  User.getById(req.userId, function(err, user) {
+      if (err) return res.status(500).send('There was a problem finding the user.');
+
+      if (!user) return res.status(404).send('No user found.');
+
+      res.status(200).send(user);
+  });
+};
+
+// POST for account management
 router.post('/', function(req, res, next) {
 
   var newUser = new User ({
@@ -46,6 +59,51 @@ router.post('/', function(req, res, next) {
     res.json(user)
   })
 })
+
+// Register a new user on POST
+exports.user_register = function(req, res) {
+
+  var hashedPassword = bcrypt.hashSync(req.body.password, 8);
+
+  var newUser = new User({
+      email: req.body.email,
+      username: req.body.username,
+      password: hashedPassword,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      address: req.body.address
+  });
+
+  User.add(newUser, (err, user) => {
+      if (err)
+          return res.status(500).send('There was a problem registering the user.');
+
+      var token = jwt.sign({ id: user._id}, config.web.secret, {
+          expiresIn: 86400 // 24 hours
+      });
+
+      res.status(200).send({ auth: true, token: token });
+  });
+};
+
+// Login as an existing user in on POST
+exports.user_login = function(req, res) {
+
+  User.getOne(req.body.email, function(err, user) {
+      if (err) return res.status(500).send('Error on server.');
+      if (!user) return res.status(404).send('No user found.');
+
+      var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
+
+      if (!passwordIsValid) return res.status(401).send({ auth: false, token: null});
+
+      var token = jwt.sign({ id: user._id}, config.web.secret, {
+          expiresIn: 86400 // expires in 24 hours
+      });
+
+      res.status(200).send( {auth: true, token: token });
+  })
+};
 
 // PUT
 router.put('/:id', function(req, res, next) {
@@ -89,5 +147,11 @@ router.delete('/:id', function(req, res, next) {
   })
 
 })
+
+
+// Logout an existing user
+exports.user_logout = function(req, res) {
+  res.status(200).send({ auth: false, token: null});
+};
 
 module.exports = router

@@ -12,6 +12,7 @@ const fs = require('fs');
 const rfs = require('rotating-file-stream');
 var userAPI = require('./routes/users-api');
 var securityQuestionnaireAPI = require('./routes/securityQuestionnaires-api');
+var catalogAPI = require('./routes/catalog-api')
 
 // Log File Writer
 let logDirectory = path.join(__dirname, '../log');
@@ -55,6 +56,8 @@ app.use('/api/user', userAPI)
 // routes to the securityQuestionnaires-api file
 app.use('/api/questionnaire', securityQuestionnaireAPI)
 
+//routes to the catalog-API file
+app.use('/api', catalogAPI);
 
 /**
  * Request handler
@@ -77,3 +80,4 @@ http.createServer(app).listen(3000, function() {
 });
 
 
+module.exports = app;
