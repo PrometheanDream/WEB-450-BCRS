@@ -3,12 +3,16 @@ import { UserComponent } from './user/user.component'
 import { UserEditComponent } from './user-edit/user-edit.component'
 import {UserCreateComponent} from './user-create/user-create.component';
 import { SecurityQuestionnaireComponent } from './security-questionnaire/security-questionnaire.component';
+import {LoginComponent} from './login/login.component';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {ErrorComponent} from './error/error.component';
+
 
 
 export const AppRoutes: Routes = [
   {
     path: '',
-    component: UserComponent
+    component: LoginComponent
   },
   {
     path: 'users',
@@ -25,6 +29,18 @@ export const AppRoutes: Routes = [
   {
     path: 'questionnaire',
     component: SecurityQuestionnaireComponent
+  },
+  {
+    path: 'session/login',
+    component: LoginComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
+  },
+  {
+    path: 'session/error',
+    component: ErrorComponent
   }
 ]
 

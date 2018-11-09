@@ -11,8 +11,8 @@ const cors = require('cors');
 const fs = require('fs');
 const rfs = require('rotating-file-stream');
 var userAPI = require('./routes/users-api');
+const sessionAPI = require('./routes/session-api')
 var securityQuestionnaireAPI = require('./routes/securityQuestionnaires-api');
-var catalogAPI = require('./routes/catalog-api')
 
 // Log File Writer
 let logDirectory = path.join(__dirname, '../log');
@@ -45,7 +45,7 @@ let app = express();
  */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ 'extended': 'true'}));
-//app.use(cors());
+app.use(cors());
 app.use(express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use('/', express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
 app.use(morgan('combined', {stream: accessLogStream}));
@@ -56,8 +56,8 @@ app.use('/api/user', userAPI)
 // routes to the securityQuestionnaires-api file
 app.use('/api/questionnaire', securityQuestionnaireAPI)
 
-//routes to the catalog-API file
-app.use('/api', catalogAPI);
+// session
+app.use('/api/session', sessionAPI)
 
 /**
  * Request handler

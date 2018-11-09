@@ -31,6 +31,12 @@ import { AppRoutes } from './app.routing';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { SecurityQuestionnaireComponent } from './security-questionnaire/security-questionnaire.component'
 
+// session
+import { LocalStorageService } from 'ngx-webstorage';
+import { LoginComponent } from './login/login.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ErrorComponent } from './error/error.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +45,9 @@ import { SecurityQuestionnaireComponent } from './security-questionnaire/securit
     UserEditComponent,
     UserCreateComponent,
     SecurityQuestionnaireComponent,
+    LoginComponent,
+    NotFoundComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +71,7 @@ import { SecurityQuestionnaireComponent } from './security-questionnaire/securit
     MatTableModule,
     RouterModule.forRoot(AppRoutes, {useHash: true, enableTracing: false}),
   ],
-  providers: [],
+  providers: [ LocalStorageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
