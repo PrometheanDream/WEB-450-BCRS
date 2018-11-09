@@ -3,27 +3,27 @@
 
 
 <mat-card>
-    <h2>Fill Out Security Questionnaire</h2><br>
+  <h2>Fill Out Security Questionnaire</h2><br>
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
     <mat-card-content>
 
-        <p>What is your Mother's Maiden name?</p>
+      <p>What is your Mother's Maiden name?</p>
       <mat-form-field>
         <input matInput placeholder="Answer" type="text" [formControl]="form.controls['answer1']" />
       </mat-form-field><br>
 
-      <p>What town were you born in?</p>
+      <p>In which town were you born?</p>
       <mat-form-field>
         <input matInput placeholder="Answer" type="text" [formControl]="form.controls['answer2']" />
       </mat-form-field><br>
 
-      <p>What is your favorite color?</p>
+      <p>What is your favourite color?</p>
       <mat-form-field>
         <input matInput placeholder="Answer" type="text" [formControl]="form.controls['answer3']" />
       </mat-form-field><br>
 
-      <p>What is your favorite planet?</p>
+      <p>What is your favourite planet?</p>
       <mat-form-field>
         <input matInput placeholder="Answer" type="text" [formControl]="form.controls['answer4']" />
       </mat-form-field>
