@@ -769,3 +769,5 @@
 ::1 - - [10/Nov/2018:02:16:53 +0000] "POST /api/session/register HTTP/1.1" 200 195 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
 ::1 - - [10/Nov/2018:02:17:04 +0000] "POST /api/session/login HTTP/1.1" 200 195 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
 ::1 - - [10/Nov/2018:02:17:04 +0000] "GET /api/user HTTP/1.1" 200 584 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+::1 - - [10/Nov/2018:02:24:57 +0000] "GET /api/user HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+::1 - - [10/Nov/2018:02:25:47 +0000] "GET /api/user HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"

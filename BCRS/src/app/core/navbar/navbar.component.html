@@ -2,6 +2,10 @@
 
   <button mat-button [routerLink]="['/users']">Users</button>
 
+  <button mat-button [routerLink]="['/about-us']">About Us</button>
+
+  <button mat-button [routerLink]="['/contact-us']">Contact Us</button>
+
   <!-- User profile menu -->
   <button [matMenuTriggerFor]="user" color="accent" mat-icon-button class="ml-xs">
     <mat-icon>person</mat-icon>
@@ -9,7 +13,7 @@
 
   <mat-menu #user="matMenu" x-position="before">
 
-    <button [routerLink]="['/questionnaire']" mat-menu-item>
+    <button color="accent" [routerLink]="['/questionnaire']" mat-menu-item>
       <mat-icon>question_answer</mat-icon>
       Update Security Questions
     </button>
@@ -33,7 +37,7 @@
       <mat-icon>exit_to_app</mat-icon>
       Sign Out
     </button>
-  
+
   </mat-menu>
 
 </mat-toolbar>

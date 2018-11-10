@@ -1,12 +1,16 @@
-import { Routes, RouterModule } from '@angular/router'
-import { UserComponent } from './user/user.component'
-import { UserEditComponent } from './user-edit/user-edit.component'
-import {UserCreateComponent} from './user-create/user-create.component';
+import { Routes, RouterModule, ROUTES } from '@angular/router';
+import { UserComponent } from './user/user.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { UserCreateComponent } from './user-create/user-create.component';
 import { SecurityQuestionnaireComponent } from './security-questionnaire/security-questionnaire.component';
 import {LoginComponent} from './login/login.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {ErrorComponent} from './error/error.component';
 
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ServerErrorComponent } from './server-error/server-error.component';
 
 
 export const AppRoutes: Routes = [
@@ -45,6 +49,21 @@ export const AppRoutes: Routes = [
   {
     path: 'session/error',
     component: ErrorComponent
+  },
+  {
+    path: 'about-us',
+    component: AboutUsComponent,
+  },
+  {
+    path: 'contact-us',
+    component: ContactUsComponent,
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
+  },
+  {
+    path: '**',
+    component: ServerErrorComponent,
   }
-]
-
+];
