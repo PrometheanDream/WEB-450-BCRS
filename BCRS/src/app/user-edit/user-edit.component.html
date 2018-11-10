@@ -5,9 +5,6 @@
     <h3>Update User Information</h3>
     <form [formGroup]="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
       <mat-card-content>
-        <mat-form-field>
-          <input matInput placeholder="Email" type="text" [value]="user.email" [formControl]="form.controls['email']" />
-        </mat-form-field><br>
   
         <mat-form-field>
           <input matInput placeholder="First Name" type="text" [value]="user.first_name" [formControl]="form.controls['firstname']" />

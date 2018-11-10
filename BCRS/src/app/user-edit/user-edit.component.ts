@@ -28,7 +28,7 @@ export class UserEditComponent implements OnInit {
       'Content-Type': 'application/json',
       'x-access-token': this.token
     })
-    // pulls the user header
+    // pulls the info
     this.http.get('http://localhost:3000/api/user', {headers} ).subscribe(data => {
       this.users = data
     });
@@ -42,7 +42,6 @@ export class UserEditComponent implements OnInit {
     this.http.get('/api/user/' + this.id).subscribe( data => {
       this.user = {
         _id: data['_id'],
-        email: data['email'],
         first_name: data['first_name'],
         last_name: data['last_name'],
         address: data['address']
@@ -52,7 +51,6 @@ export class UserEditComponent implements OnInit {
   //creates form on init and requires these fields
   ngOnInit() {
     this.form = this.fb.group({
-      email: [null, Validators.compose([Validators.required ])],
       firstname: [null, Validators.compose([Validators.required ])],
       lastname: [null, Validators.compose([Validators.required ])],
       address: [null, Validators.compose([Validators.required ])],
@@ -64,14 +62,13 @@ export class UserEditComponent implements OnInit {
   //grabs the values from the form
   onSubmit() {
     this.user = {
-      email: this.form.controls['email'].value,
       last_name: this.form.controls['lastname'].value,
       first_name: this.form.controls['firstname'].value,
       address: this.form.controls['address'].value,
 
     }
     // sends the values of this.user to the mapped user as update
-    this.http.patch('/api/user/' + this.id, this.user).subscribe(res => {
+    this.http.put('/api/update-user/different/' + this.id, this.user).subscribe(res => {
       this.router.navigate(['/users'], res)
     })
   }

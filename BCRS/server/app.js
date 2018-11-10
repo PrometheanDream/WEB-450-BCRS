@@ -11,7 +11,8 @@ const cors = require('cors');
 const fs = require('fs');
 const rfs = require('rotating-file-stream');
 var userAPI = require('./routes/users-api');
-const sessionAPI = require('./routes/session-api')
+const sessionAPI = require('./routes/session-api');
+var serviceAPI = require('./routes/services-api');
 var securityQuestionnaireAPI = require('./routes/securityQuestionnaires-api');
 
 // Log File Writer
@@ -53,11 +54,20 @@ app.use(morgan('combined', {stream: accessLogStream}));
 //routes to users-api file
 app.use('/api/user', userAPI)
 
-// routes to the securityQuestionnaires-api file
-app.use('/api/questionnaire', securityQuestionnaireAPI)
+// routes to the use-api to update questionnaire
+app.use('/api/questionnaire', userAPI)
+
+//
+app.use('/api/update-user', userAPI)
 
 // session
 app.use('/api/session', sessionAPI)
+
+//update password
+app.use('/api/update-password', userAPI)
+
+//services
+app.use('/api/services', serviceAPI)
 
 /**
  * Request handler

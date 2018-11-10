@@ -28,7 +28,7 @@ export class SecurityQuestionnaireComponent implements OnInit {
           'Content-Type': 'application/json',
           'x-access-token': this.token
         })
-        // pulls the user header
+        // pulls the info and assigns to data
         this.http.get('http://localhost:3000/api/user', {headers} ).subscribe(data => {
           this.users = data
         });
@@ -65,7 +65,7 @@ export class SecurityQuestionnaireComponent implements OnInit {
       answer4: this.form.controls['answer4'].value,
     }
 
-    this.http.patch('/api/user/' + this.id, this.questionnaire).subscribe(res => {
+    this.http.put('/api/questionnaire/' + this.id, this.questionnaire).subscribe(res => {
       this.router.navigate(['/users'], res)
     })
   }

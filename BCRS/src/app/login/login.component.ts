@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
     this.http.post('/api/session/login', this.user).subscribe(res => {
       this.sessionService.setLocalStorage(res['token'])
-      this.router.navigate(['/users'], res);
+      this.router.navigate(['/homepage'], res);
     })
   }
 }

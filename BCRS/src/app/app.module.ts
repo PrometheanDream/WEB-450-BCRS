@@ -12,6 +12,7 @@ import { FormBuilder } from '@angular/forms';
 // material components
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -35,11 +36,17 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServerErrorComponent } from './server-error/server-error.component';
 
+
 // session
 import { LocalStorageService } from 'ngx-webstorage';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ErrorComponent } from './error/error.component'
+import { ErrorComponent } from './error/error.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ServiceOrderFormComponent } from './service-order-form/service-order-form.component';
+import { ServiceInvoiceFormComponent } from './service-invoice-form/service-invoice-form.component';
+import { ServiceOrderViewComponent } from './service-order-view/service-order-view.component'
 
 @NgModule({
   declarations: [
@@ -56,6 +63,11 @@ import { ErrorComponent } from './error/error.component'
     ContactUsComponent,
     PageNotFoundComponent,
     ServerErrorComponent,
+    UpdatePasswordComponent,
+    HomePageComponent,
+    ServiceOrderFormComponent,
+    ServiceInvoiceFormComponent,
+    ServiceOrderViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +89,7 @@ import { ErrorComponent } from './error/error.component'
     RouterModule,
     MatSelectModule,
     MatTableModule,
+    MatCheckboxModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false }),
   ],
   providers: [ LocalStorageService ],
