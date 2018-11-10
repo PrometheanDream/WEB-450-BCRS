@@ -2,11 +2,15 @@ const mongoose = require('mongoose')
 const moment = require('moment')
 
 var userSchema = new mongoose.Schema({
-  email: { type: String, unique: true, required: true, dropDups: true },
-  password: { type: String, required: true },
-  first_name: { type: String, required: true },
-  last_name: { type: String, required: true },
-  address: { type: String, required: true },
+  email: { type: String, unique: true, dropDups: true },
+  password: { type: String },
+  first_name: { type: String },
+  last_name: { type: String },
+  address: { type: String },
+  answer1: { type: String},
+  answer2: { type: String},
+  answer3: { type: String},
+  answer4: { type: String}, 
   create_date: { type: String, default: moment.utc().toDate().toUTCString() }
 })
 

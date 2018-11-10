@@ -22,13 +22,17 @@ router.post('/register', function(req, res, next) {
     password: hashedPassword,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
-    address: req.body.address
+    address: req.body.address,
+    answer1: req.body.answer1,
+    answer2: req.body.answer2,
+    answer3: req.body.answer3,
+    answer4: req.body.answer4
   })
 
   User.create(newUser, function(err, user) {
-    if (err) return res.status(500).send('There was a program registering the user.')
+    if (err) return res.status(500).send('There was a problem registering the user.')
 
-    let token = jwt.sign({ id: user_id}, config.web.secret, {
+    let token = jwt.sign({ id: user._id}, config.web.secret, {
       expiresIn: 86400
     })
 

@@ -9,7 +9,7 @@ import {SessionService} from '../session.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  displayedColumns: string[] = ['_id', 'email', 'firstName', 'lastName', 'address', 'update', 'delete'];
+  displayedColumns: string[] = ['_id', 'email', 'firstName', 'lastName', 'address', 'update', 'updateSecurity', 'delete'];
   users: any;
   token: string
 

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {ActivatedRoute} from '@angular/router';
 import {Router} from '@angular/router';
+import {SessionService} from '../session.service';
 
 @Component({
   selector: 'app-security-questionnaire',
@@ -9,10 +11,42 @@ import {Router} from '@angular/router';
   styleUrls: ['./security-questionnaire.component.css']
 })
 export class SecurityQuestionnaireComponent implements OnInit {
+  id: String
   form: FormGroup
   questionnaire: any
+  token: string 
+  users: any
+  user: any
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private sessionService: SessionService, private route: ActivatedRoute) {
+        
+    
+        // gets token from local storage and assigns to this.token
+        this.token = sessionService.getLocalStorage()
+        // creates a new HttpHeaders and assigns this.token to the x-access-token
+        const headers = new HttpHeaders({
+          'Content-Type': 'application/json',
+          'x-access-token': this.token
+        })
+        // pulls the user header
+        this.http.get('http://localhost:3000/api/user', {headers} ).subscribe(data => {
+          this.users = data
+        });
+
+
+        this.id = route.snapshot.paramMap.get('id')
+
+        // grabs database info and maps the info from the selected user for current info
+        this.http.get('/api/user/' + this.id).subscribe( data => {
+          this.questionnaire = {
+            answer1: data['answer1'],
+            answer2: data['answer2'],
+            answer3: data['answer3'],
+            answer4: data['answer4']
+          }
+        })
+        
+   }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -31,7 +65,7 @@ export class SecurityQuestionnaireComponent implements OnInit {
       answer4: this.form.controls['answer4'].value,
     }
 
-    this.http.post('/api/questionnaire', this.questionnaire).subscribe(res => {
+    this.http.patch('/api/user/' + this.id, this.questionnaire).subscribe(res => {
       this.router.navigate(['/users'], res)
     })
   }

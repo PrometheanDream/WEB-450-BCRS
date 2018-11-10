@@ -1,5 +1,5 @@
 <mat-card>
-  <h2>Create new user </h2><br>
+  <h2>Log In </h2><br>
   <form [formGroup]="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
     <mat-card-content>
       <mat-form-field>
@@ -16,4 +16,5 @@
       </mat-card-actions>
     </mat-card-content>
   </form>
+  <button mat-raised-button color="accent" routerLink="/user-create">Register Account</button>
 </mat-card>

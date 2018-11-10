@@ -31,6 +31,10 @@ export const AppRoutes: Routes = [
     component: SecurityQuestionnaireComponent
   },
   {
+    path: 'questionnaire/:id',
+    component: SecurityQuestionnaireComponent
+  },
+  {
     path: 'session/login',
     component: LoginComponent
   },

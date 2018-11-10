@@ -14,7 +14,8 @@ const utils = require('../helpers/check-token')
 
 
 // GET
-router.get('/', utils.checkToken, function(req, res, next) {
+//router.get('/', utils.checkToken, function(req, res, next) {
+router.get('/', function(req, res, next) {
   User.find({}, function( err, users) {
     if (err) return next(err)
     res.json(users)
@@ -22,7 +23,8 @@ router.get('/', utils.checkToken, function(req, res, next) {
 })
 
 // GET by ID
-router.get('/:id', utils.checkToken, function(req, res, next) {
+//router.get('/:id', utils.checkToken, function(req, res, next) {
+router.get('/:id', function(req, res, next) {
 
   let id = req.params.id
 
@@ -32,8 +34,30 @@ router.get('/:id', utils.checkToken, function(req, res, next) {
   })
 })
 
+//PATCH
+//router.patch('/:id', utils.checkToken, function(req, res, next) {
+router.patch('/:id', function(req, res, next) {
+
+  var newAnswers = new User ({
+    answer1: req.body.answer1,
+    answer2: req.body.answer2,
+    answer3: req.body.answer3,
+    answer4: req.body.answer4
+  })
+
+  // get the id from the param
+  let id = req.params.id
+
+  // find the user in the database by the auto-generated id
+  db.users.updateOne({'_id': id}, {$set: newAnswers}); 
+
+    })
+
+
 
 // POST for account management
+// use this to protect and check token
+//router.post('/', utils.checkToken, function(req, res, next) {
 router.post('/', utils.checkToken, function(req, res, next) {
 
   var newUser = new User ({
@@ -41,7 +65,11 @@ router.post('/', utils.checkToken, function(req, res, next) {
     password: req.body.password,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
-    address: req.body.address
+    address: req.body.address,
+    answer1: req.body.answer1,
+    answer2: req.body.answer2,
+    answer3: req.body.answer3,
+    answer4: req.body.answer4
   })
 
   User.create(newUser, function(err, user) {
@@ -52,7 +80,8 @@ router.post('/', utils.checkToken, function(req, res, next) {
 
 
 // PUT
-router.put('/:id', utils.checkToken, function(req, res, next) {
+// router.put('/:id', utils.checkToken, function(req, res, next) {
+router.put('/:id', function(req, res, next) {
 
   // get the id from the param
   let id = req.params.id
@@ -66,7 +95,11 @@ router.put('/:id', utils.checkToken, function(req, res, next) {
       password: req.body.password,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
-      address: req.body.address
+      address: req.body.address,
+      answer1: req.body.answer1,
+      answer2: req.body.answer2,
+      answer3: req.body.answer3,
+      answer4: req.body.answer4
     })
 
     // save the updated record
