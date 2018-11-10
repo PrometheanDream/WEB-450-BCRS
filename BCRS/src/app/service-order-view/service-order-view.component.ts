@@ -11,7 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ServiceOrderViewComponent implements OnInit {
   id: String
-  services: any
+  service: any
   token: string
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, private sessionService: SessionService) {
@@ -26,15 +26,15 @@ export class ServiceOrderViewComponent implements OnInit {
     })
 
     // pulls the info
-    this.http.get('http://localhost:3000/api/user', {headers} ).subscribe(data => {
-      this.services = data
+    this.http.get('http://localhost:3000/api/services', {headers} ).subscribe(data => {
+      this.service = data
     });
 
     this.id = route.snapshot.paramMap.get('id')
 
     // grabs database info and maps the info from the selected user for current info
-    this.http.get('/api/user/' + this.id).subscribe( data => {
-      this.services = {
+    this.http.get('/api/services/' + this.id).subscribe( data => {
+      this.service = {
         _id: data['_id'],
         password_reset: data['password_reset'],
         spyware_removal: data['spyware_removal'],

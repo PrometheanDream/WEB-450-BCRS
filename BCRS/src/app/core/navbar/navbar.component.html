@@ -1,6 +1,8 @@
 <mat-toolbar color="primary">
 
-    <button mat-button [routerLink]="['/homepage']">Home</button>
+  <button mat-button [routerLink]="['/homepage']">Home</button>
+
+  <button mat-button [routerLink]="['/service-invoice']">Invoices</button>
 
   <button mat-button [routerLink]="['/users']">Users</button>
 
@@ -15,10 +17,11 @@
 
   <mat-menu  #user="matMenu" x-position="before">
 
-    <button color="accent" [routerLink]="['/questionnaire, user._id']" mat-menu-item>
-      <mat-icon>question_answer</mat-icon>
-      Update Security Questions
+    <button color="accent" [routerLink]="['/service-order']" mat-menu-item>
+      <mat-icon>shopping_cart</mat-icon>
+      Create Service Order
     </button>
+
     <button [routerLink]="['/user-create']" mat-menu-item>
       <mat-icon>person_add</mat-icon>
       Register Account
