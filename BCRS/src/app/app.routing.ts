@@ -5,7 +5,6 @@ import { UserCreateComponent } from './user-create/user-create.component';
 import { SecurityQuestionnaireComponent } from './security-questionnaire/security-questionnaire.component';
 import {LoginComponent} from './login/login.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
-import {NotFoundComponent} from './not-found/not-found.component';
 import {ErrorComponent} from './error/error.component';
 
 
@@ -15,6 +14,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ServiceOrderFormComponent } from './service-order-form/service-order-form.component';
 import { ServiceInvoiceFormComponent } from './service-invoice-form/service-invoice-form.component';
 import { ServiceOrderViewComponent } from './service-order-view/service-order-view.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -79,6 +79,10 @@ export const AppRoutes: Routes = [
   {
     path: 'service-order-view/:id',
     component: ServiceOrderViewComponent
-  }
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  },
   
 ];
