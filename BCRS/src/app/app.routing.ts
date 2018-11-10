@@ -43,7 +43,8 @@ export const AppRoutes: Routes = [
     component: PageNotFoundComponent,
   },
   {
-    path: '**',
+    path: '',
     component: ServerErrorComponent,
   }
 ];
+
