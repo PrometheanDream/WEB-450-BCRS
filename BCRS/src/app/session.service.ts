@@ -6,11 +6,11 @@ import { LocalStorageService } from 'ngx-webstorage';
 })
 export class SessionService {
 
-  constructor(private localStorage: LocalStorageService ) { }
+  constructor(private localStorage: LocalStorageService) { }
 
   setLocalStorage(valueToSet: string) {
-    console.log(valueToSet)
-    this.localStorage.store('token', valueToSet);
+    console.log(valueToSet),
+      this.localStorage.store('token', valueToSet);
   }
 
   getLocalStorage() {

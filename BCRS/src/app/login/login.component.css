@@ -1,0 +1,14 @@
+.mat-card{
+    font-family: Quicksand;
+    font-size: 16pt;
+    font-weight: 200;
+    margin: 5%;
+}
+
+button.mat-raised-button.mat-primary{
+    font-family: Quicksand;
+    font-size: 12pt;
+    font-weight: 200;
+    margin-left: 1%;
+    
+}

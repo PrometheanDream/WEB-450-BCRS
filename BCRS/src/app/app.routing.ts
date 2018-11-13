@@ -3,9 +3,7 @@ import { UserComponent } from './user/user.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { SecurityQuestionnaireComponent } from './security-questionnaire/security-questionnaire.component';
-import {LoginComponent} from './login/login.component';
-import {NotFoundComponent} from './not-found/not-found.component';
-import {ErrorComponent} from './error/error.component';
+import { LoginComponent } from './login/login.component';
 
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -43,14 +41,6 @@ export const AppRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: '**',
-    component: NotFoundComponent
-  },
-  {
-    path: 'session/error',
-    component: ErrorComponent
-  },
-  {
     path: 'about-us',
     component: AboutUsComponent,
   },
@@ -63,7 +53,7 @@ export const AppRoutes: Routes = [
     component: PageNotFoundComponent,
   },
   {
-    path: '**',
+    path: 'session/error',
     component: ServerErrorComponent,
   }
 ];

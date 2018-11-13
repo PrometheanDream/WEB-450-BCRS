@@ -7,13 +7,13 @@
   <button mat-button [routerLink]="['/contact-us']">Contact Us</button>
 
   <!-- User profile menu -->
-  <button [matMenuTriggerFor]="user" color="accent" mat-icon-button class="ml-xs">
+  <button [matMenuTriggerFor]="user" color="none" mat-icon-button class="ml-xs">
     <mat-icon>person</mat-icon>
   </button>
 
   <mat-menu #user="matMenu" x-position="before">
 
-    <button color="accent" [routerLink]="['/questionnaire']" mat-menu-item>
+    <button color="primary" [routerLink]="['/questionnaire']" mat-menu-item>
       <mat-icon>question_answer</mat-icon>
       Update Security Questions
     </button>

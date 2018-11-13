@@ -32,14 +32,12 @@ import { UserCreateComponent } from './user-create/user-create.component';
 import { SecurityQuestionnaireComponent } from './security-questionnaire/security-questionnaire.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ServerErrorComponent } from './server-error/server-error.component';
 
 // session
 import { LocalStorageService } from 'ngx-webstorage';
 import { LoginComponent } from './login/login.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { ErrorComponent } from './error/error.component'
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ServerErrorComponent } from './server-error/server-error.component';
 
 @NgModule({
   declarations: [
@@ -50,8 +48,6 @@ import { ErrorComponent } from './error/error.component'
     UserCreateComponent,
     SecurityQuestionnaireComponent,
     LoginComponent,
-    NotFoundComponent,
-    ErrorComponent,
     AboutUsComponent,
     ContactUsComponent,
     PageNotFoundComponent,
@@ -79,7 +75,7 @@ import { ErrorComponent } from './error/error.component'
     MatTableModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false }),
   ],
-  providers: [ LocalStorageService ],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
