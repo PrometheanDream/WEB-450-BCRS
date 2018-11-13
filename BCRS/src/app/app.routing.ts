@@ -6,6 +6,8 @@ import { SecurityQuestionnaireComponent } from './security-questionnaire/securit
 import {LoginComponent} from './login/login.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import {ErrorComponent} from './error/error.component';
+import { ServerErrorComponent } from './server-error/server-error.component';
+
 
 
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -89,6 +91,9 @@ export const AppRoutes: Routes = [
     path: '**',
     component: PageNotFoundComponent
   },
-  
-  
+  {
+    path: '',
+    component: ServerErrorComponent
+  },
 ];
+
