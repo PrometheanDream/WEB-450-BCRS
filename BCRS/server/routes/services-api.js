@@ -21,8 +21,17 @@ router.get('/', function(req, res, next) {
 router.get('/aggregate', function(req, res, next) {
 
     Service.aggregate([
-        {$group: {_id: null, total : {$sum : '$order_total'} } },
-           {$sort: { total: -1 } }
+        {$group: {_id: null, 
+         total : {$sum : '$order_total'},
+         passwordCount : {$sum: {$cond: [{$eq:["$password_reset", true]}, 1, 0 ]} },
+         spyCount : {$sum: {$cond: [{$eq:["$spyware_removal", true]}, 1, 0 ]} },
+         ramCount : {$sum: {$cond: [{$eq:["$ramUpgrade", true]}, 1, 0 ]} },
+         softwareCount : {$sum: {$cond: [{$eq:["$software_install", true]}, 1, 0 ]} },
+         tuneCount : {$sum: {$cond: [{$eq:["$tuneUp", true]}, 1, 0 ]} },
+         keyboardCount : {$sum: {$cond: [{$eq:["$keyboardClean", true]}, 1, 0 ]} },
+         diskCount : {$sum: {$cond: [{$eq:["$diskClean", true]}, 1, 0 ]} },
+        } 
+    }, {$sort: { total: -1 } }
        
            ]).exec(function(err, service) {
                 if (err) return next(err)

@@ -42,7 +42,7 @@ export class ServiceOrderViewComponent implements OnInit {
         software_install: data['software_install'],
         tuneUp: data['tuneUp'],
         keyboardClean: data['keyboardClean'],
-        diskCLean: data['diskCLean'],
+        diskClean: data['diskClean'],
         order_total: data['order_total']
       }
     })

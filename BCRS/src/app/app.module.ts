@@ -9,6 +9,9 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule, FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 
+// charts module
+import { ChartsModule } from 'ng2-charts';
+
 // material components
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -92,6 +95,7 @@ import { ServiceSalesGraphComponent } from './service-sales-graph/service-sales-
     MatSelectModule,
     MatTableModule,
     MatCheckboxModule,
+    ChartsModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false }),
   ],
   providers: [ LocalStorageService ],
