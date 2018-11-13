@@ -46,7 +46,8 @@ import { UpdatePasswordComponent } from './update-password/update-password.compo
 import { HomePageComponent } from './home-page/home-page.component';
 import { ServiceOrderFormComponent } from './service-order-form/service-order-form.component';
 import { ServiceInvoiceFormComponent } from './service-invoice-form/service-invoice-form.component';
-import { ServiceOrderViewComponent } from './service-order-view/service-order-view.component'
+import { ServiceOrderViewComponent } from './service-order-view/service-order-view.component';
+import { ServiceSalesGraphComponent } from './service-sales-graph/service-sales-graph.component'
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { ServiceOrderViewComponent } from './service-order-view/service-order-vi
     ServiceOrderFormComponent,
     ServiceInvoiceFormComponent,
     ServiceOrderViewComponent,
+    ServiceSalesGraphComponent,
   ],
   imports: [
     BrowserModule,

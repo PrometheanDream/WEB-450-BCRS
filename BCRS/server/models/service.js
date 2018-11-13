@@ -9,7 +9,8 @@ var serviceSchema = new mongoose.Schema({
   software_install: { type: Boolean, default: false},
   tuneUp: { type: Boolean, default: false},
   keyboardClean: { type: Boolean, default: false},
-  diskClean: { type: Boolean, default: false}, 
+  diskClean: { type: Boolean, default: false},
+  order_total: { type: Number }, 
   create_date: { type: String, default: moment.utc().toDate().toUTCString() }
 })
 

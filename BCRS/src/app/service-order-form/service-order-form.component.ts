@@ -14,19 +14,58 @@ export class ServiceOrderFormComponent implements OnInit {
 form: FormGroup
 service: any
 id: string
+checked: boolean
+
+
+//used to calculate order total
+totalCost = 0;
+cost1 = 15;
+cost2 = 25;
+cost3 = 45;
+cost4 = 50; 
+cost5 = 45;
+cost6 = 10;
+cost7 = 25;
+
+
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private http: HttpClient, private router: Router, private sessionService: SessionService) { }
+
 
   ngOnInit() {
     this.form = this.fb.group({
-      password_reset: [null],
-      spyware_removal: [null],
-      ramUpgrade: [null],
-      software_install: [null],
-      tuneUp: [null],
-      keyboardClean: [null],
-      diskClean: [null],
+      password_reset: [false],
+      spyware_removal: [false],
+      ramUpgrade: [false],
+      software_install: [false],
+      tuneUp: [false],
+      keyboardClean: [false],
+      diskClean: [false],
     })
+  
   }
+  //updates the cost total depending on which checkbox is clicked
+  updateCost1() {
+    this.totalCost += this.cost1;
+  }
+  updateCost2() {
+    this.totalCost += this.cost2;
+  }
+  updateCost3() {
+    this.totalCost += this.cost3;
+  }
+  updateCost4() {
+    this.totalCost += this.cost4;
+  }
+  updateCost5() {
+    this.totalCost += this.cost5;
+  }
+  updateCost6() {
+    this.totalCost += this.cost6;
+  }
+  updateCost7() {
+    this.totalCost += this.cost7;
+  }
+
 
   onSubmit() {
     this.service = {
@@ -37,6 +76,7 @@ id: string
       tuneUp: this.form.controls['tuneUp'].value,
       keyboardClean: this.form.controls['keyboardClean'].value,
       diskClean: this.form.controls['diskClean'].value,
+      order_total: this.totalCost
     }
   
 

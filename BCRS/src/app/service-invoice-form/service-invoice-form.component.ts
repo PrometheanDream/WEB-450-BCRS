@@ -11,7 +11,7 @@ import {SessionService} from '../session.service';
   styleUrls: ['./service-invoice-form.component.css']
 })
 export class ServiceInvoiceFormComponent implements OnInit {
-  displayedColumns: string[] = ['_id', 'create_date', 'viewInvoice'];
+  displayedColumns: string[] = ['_id', 'create_date', 'order_total', 'viewInvoice'];
 id: string
 token: string
 services: any

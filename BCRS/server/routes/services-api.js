@@ -29,8 +29,10 @@ router.get('/:id', function(req, res, next) {
   })
 })
 
+//Aggregate true values from documents
+//router.get() {}
 
-
+// Service.aggregate( [ { $match: { true } } ], { comment: "match all services marked true" } ).pretty()
 
 
  //router.post('/', utils.checkToken, function(req, res, next) {
@@ -43,7 +45,9 @@ router.post('/', function(req, res, next) {
       software_install: req.body.software_install,
       tuneUp: req.body.tuneUp,
       keyboardClean: req.body.keyboardClean,
-      diskClean: req.body.diskClean
+      diskClean: req.body.diskClean,
+      order_total: req.body.order_total, 
+      
     })
   
     Service.create(newService, function(err, service) {
