@@ -14,6 +14,7 @@ export class ServiceSalesGraphComponent implements OnInit {
   token: string
 
   constructor(private http: HttpClient, private router: Router, private sessionService: SessionService) {
+      
       // gets token from local storage and assigns to this.token
       this.token = sessionService.getLocalStorage()
       // creates a new HttpHeaders and assigns this.token to the x-access-token
@@ -21,18 +22,15 @@ export class ServiceSalesGraphComponent implements OnInit {
         'Content-Type': 'application/json',
         'x-access-token': this.token
       })
-    this.http.get('http://localhost:3000/api/services', {headers} ).subscribe(data => {
-      this.service = data
+    this.http.get('http://localhost:3000/api/services/aggregate', {headers} ).subscribe(data => {
+      this.productInfo = data
     });
 
 
-    this.http.get('/api/services/aggregate').subscribe( data => {
-      this.productInfo = {
-        total: data['total']
+    //this.http.get('/api/services/aggregate').subscribe( data => {
+     //this.service = data
 
-      }
-
-    })
+   // });
 
    }
 
