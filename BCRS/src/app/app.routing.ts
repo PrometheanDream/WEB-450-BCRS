@@ -15,6 +15,7 @@ import { ServiceOrderFormComponent } from './service-order-form/service-order-fo
 import { ServiceInvoiceFormComponent } from './service-invoice-form/service-invoice-form.component';
 import { ServiceOrderViewComponent } from './service-order-view/service-order-view.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ServiceSalesGraphComponent } from './service-sales-graph/service-sales-graph.component';
 
 
 
@@ -81,8 +82,13 @@ export const AppRoutes: Routes = [
     component: ServiceOrderViewComponent
   },
   {
+    path: 'service-sales-graph',
+    component: ServiceSalesGraphComponent
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   },
+  
   
 ];

@@ -17,6 +17,20 @@ router.get('/', function(req, res, next) {
   })
 })
 
+//Combines order_total values from documents
+router.get('/aggregate', function(req, res, next) {
+
+    Service.aggregate([
+        {$group: {_id: null, total : {$sum : '$order_total'} } },
+           {$sort: { total: -1 } }
+       
+           ]).exec(function(err, service) {
+                if (err) return next(err)
+                    res.json(service)
+   
+                })
+    })
+
 // GET by ID
 //router.get('/:id', utils.checkToken, function(req, res, next) {
 router.get('/:id', function(req, res, next) {
@@ -28,12 +42,6 @@ router.get('/:id', function(req, res, next) {
     res.json(service)
   })
 })
-
-//Aggregate true values from documents
-//router.get() {}
-
-// Service.aggregate( [ { $match: { true } } ], { comment: "match all services marked true" } ).pretty()
-
 
  //router.post('/', utils.checkToken, function(req, res, next) {
 router.post('/', function(req, res, next) {
