@@ -62,7 +62,7 @@ router.put('/new-password', function(req, res, next){
       expiresIn: 86400
     })
     res.status(200).send({ auth: true, token: token, })
-    res.send(user);
+    
   })
 
 })

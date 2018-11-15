@@ -18,7 +18,7 @@ const utils = require('../helpers/check-token')
 
 // GET
 //router.get('/', utils.checkToken, function(req, res, next) {
-router.get('/', function(req, res, next) {
+router.get('/', utils.checkToken, function(req, res, next) {
   User.find({}, function( err, users) {
     if (err) return next(err)
     res.json(users)
@@ -163,7 +163,7 @@ router.post('/', utils.checkToken, function(req, res, next) {
 })*/
 
 //update user password
-router.put('/new', function(req, res, next){
+/*router.put('/new', function(req, res, next){
   console.log(req.body.password + " password before");
   var hashedPassword = bcrypt.hashSync(req.body.password, 8);
   req.body.password = hashedPassword;
@@ -176,7 +176,7 @@ router.put('/new', function(req, res, next){
     console.log("=returned user from update_user")
     res.json(user);
   })
-}),
+}),*/
 
 
 
