@@ -14,6 +14,7 @@ var userAPI = require('./routes/users-api');
 const sessionAPI = require('./routes/session-api');
 var serviceAPI = require('./routes/services-api');
 var securityQuestionnaireAPI = require('./routes/securityQuestionnaires-api');
+var logAPI = require('./routes/logs-api');
 
 // Log File Writer
 let logDirectory = path.join(__dirname, '../log');
@@ -57,17 +58,17 @@ app.use('/api/user', userAPI)
 // routes to the use-api to update questionnaire
 app.use('/api/questionnaire', userAPI)
 
-//
+// updates user details
 app.use('/api/update-user', userAPI)
 
 // session
 app.use('/api/session', sessionAPI)
 
-//update password
-app.use('/api/update-password', userAPI)
-
 //services
 app.use('/api/services', serviceAPI)
+
+//logs
+app.use('/api', logAPI)
 
 
 /**

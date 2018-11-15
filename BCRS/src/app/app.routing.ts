@@ -18,6 +18,7 @@ import { ServiceInvoiceFormComponent } from './service-invoice-form/service-invo
 import { ServiceOrderViewComponent } from './service-order-view/service-order-view.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServiceSalesGraphComponent } from './service-sales-graph/service-sales-graph.component';
+import { RouteLogsPageComponent } from './route-logs-page/route-logs-page.component';
 
 
 
@@ -86,6 +87,10 @@ export const AppRoutes: Routes = [
   {
     path: 'service-sales-graph',
     component: ServiceSalesGraphComponent
+  },
+  {
+    path: 'route-log',
+    component: RouteLogsPageComponent
   },
   {
     path: '**',

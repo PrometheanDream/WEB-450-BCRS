@@ -44,7 +44,7 @@ router.put('/:id', function(req, res, next) {
   // get the id from the param
     let id = req.params.id
 
-  // sets updateObject to all params in body
+  // matches values to all params in body
   var user = {
     email: req.body.email,
     password: req.body.password,
@@ -163,11 +163,12 @@ router.post('/', utils.checkToken, function(req, res, next) {
 })*/
 
 //update user password
-exports.update_user_password = function(req, res, next){
+router.put('/new', function(req, res, next){
   console.log(req.body.password + " password before");
   var hashedPassword = bcrypt.hashSync(req.body.password, 8);
   req.body.password = hashedPassword;
   console.log(req.body.password + " password after");
+  
   User.updatePasswordById(req.body, function(err, user){
     if(err) return res.status(500).send('Error on server.');
     if(!user) return res.status(404).send('No user found');
@@ -175,7 +176,8 @@ exports.update_user_password = function(req, res, next){
     console.log("=returned user from update_user")
     res.json(user);
   })
-}
+}),
+
 
 
 // DELETE

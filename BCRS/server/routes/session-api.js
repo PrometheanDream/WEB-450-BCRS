@@ -40,6 +40,33 @@ router.post('/register', function(req, res, next) {
   })
 })
 
+//PUT to update password with new bcrypt password
+router.put('/new-password', function(req, res, next){
+
+  console.log(req.body)
+
+  let hashedPassword = bcrypt.hashSync(req.body.password, 8);
+
+  var user = {
+    email: req.body.email,
+    password: hashedPassword,
+  }
+
+  User.findOneAndUpdate({'email': email }, {password: user.password}, function(err, user) {
+    
+    if (err) return res.status(500).send('There was a problem updating the password.')
+
+    
+
+    let token = jwt.sign({ id: user._id}, config.web.secret, {
+      expiresIn: 86400
+    })
+    res.status(200).send({ auth: true, token: token, })
+    res.send(user);
+  })
+
+})
+
 router.post('/login', function(req, res, next) {
 
   let email = req.body.email

@@ -36,6 +36,6 @@ module.exports.getOne = (e, callback) => {
 //update a user password
 module.exports.updatePasswordById = (user, callback) => {
   console.log(user.password + " =id from update in model/user");
-  var query = {_id: user._id};
+  var query = {email: user.email};
   User.updateOne(query, {password: user.password}, callback);
 }

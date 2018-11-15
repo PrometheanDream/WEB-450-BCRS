@@ -26,8 +26,7 @@ export class UserComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onDelete(id) {
     this.http.delete('/api/user/' + id, {

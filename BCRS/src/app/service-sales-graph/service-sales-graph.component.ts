@@ -64,7 +64,7 @@ export class ServiceSalesGraphComponent implements OnInit {
 
 
     this.http.get('/api/services/aggregate').subscribe( data => {
-     this.aggregates = JSON.parse(this.aggregates)
+     this.aggregates = JSON.stringify(data)
     });
 
   
