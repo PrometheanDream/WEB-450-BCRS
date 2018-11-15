@@ -20,9 +20,9 @@ export class LoginComponent implements OnInit {
       email: [null, Validators.compose([Validators.required ])],
       password: [null, Validators.compose([Validators.required ])],
     })
-
-    this.form.controls['email'].setValue('bobsmith@email.com')
-    this.form.controls['password'].setValue('s3cret')
+    // set default value for quick logging in
+    //this.form.controls['email'].setValue('bobsmith@email.com')
+    //this.form.controls['password'].setValue('s3cret')
   }
 
   onSubmit() {

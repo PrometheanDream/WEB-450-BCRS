@@ -15,7 +15,7 @@ import { ChartsModule } from 'ng2-charts';
 // material components
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -26,6 +26,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 // custom app components
 import { UserComponent } from './user/user.component';
@@ -43,7 +44,6 @@ import { ServerErrorComponent } from './server-error/server-error.component';
 // session
 import { LocalStorageService } from 'ngx-webstorage';
 import { LoginComponent } from './login/login.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { ErrorComponent } from './error/error.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -62,7 +62,6 @@ import { RouteLogsPageComponent } from './route-logs-page/route-logs-page.compon
     UserCreateComponent,
     SecurityQuestionnaireComponent,
     LoginComponent,
-    NotFoundComponent,
     ErrorComponent,
     AboutUsComponent,
     ContactUsComponent,
@@ -93,6 +92,7 @@ import { RouteLogsPageComponent } from './route-logs-page/route-logs-page.compon
     MatFormFieldModule,
     MatSidenavModule,
     MatListModule,
+    MatSnackBarModule,
     RouterModule,
     MatSelectModule,
     MatTableModule,
@@ -100,7 +100,7 @@ import { RouteLogsPageComponent } from './route-logs-page/route-logs-page.compon
     ChartsModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false }),
   ],
-  providers: [ LocalStorageService ],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

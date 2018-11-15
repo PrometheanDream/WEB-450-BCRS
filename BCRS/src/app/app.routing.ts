@@ -3,9 +3,9 @@ import { UserComponent } from './user/user.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { SecurityQuestionnaireComponent } from './security-questionnaire/security-questionnaire.component';
-import {LoginComponent} from './login/login.component';
+import { LoginComponent } from './login/login.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
-import {ErrorComponent} from './error/error.component';
+import { ErrorComponent } from './error/error.component';
 import { ServerErrorComponent } from './server-error/server-error.component';
 
 

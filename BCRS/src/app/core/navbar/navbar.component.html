@@ -15,11 +15,11 @@
   <button mat-button [routerLink]="['/contact-us']">Contact Us</button>
 
   <!-- User profile menu -->
-  <button [matMenuTriggerFor]="user" color="accent" mat-icon-button class="ml-xs">
+  <button [matMenuTriggerFor]="user" color="none" mat-icon-button class="ml-xs">
     <mat-icon>person</mat-icon>
   </button>
 
-  <mat-menu  #user="matMenu" x-position="before">
+  <mat-menu #user="matMenu" x-position="before">
 
     <button color="accent" [routerLink]="['/service-order']" mat-menu-item>
       <mat-icon>shopping_cart</mat-icon>
@@ -30,7 +30,13 @@
       <mat-icon>person_add</mat-icon>
       Register Account
     </button>
-    <button mat-menu-item>
+
+    <button [routerLink]="['/updatepassword']" mat-menu-item>
+      <mat-icon>vpn_key</mat-icon>
+      Change Password
+    </button>
+
+    <!-- <button mat-menu-item>
       <mat-icon>settings</mat-icon>
       Settings
     </button>
@@ -45,7 +51,7 @@
     <button mat-menu-item>
       <mat-icon>exit_to_app</mat-icon>
       Sign Out
-    </button>
+    </button> -->
 
   </mat-menu>
 
