@@ -1,0 +1,19 @@
+h1{
+    align-self: auto;
+    margin-top: 1%;
+    margin-left: 22%;
+}
+
+img.mat-card-image{
+    width: 80%;
+    height: 60%;
+    margin-left: 10%;
+    padding-top: 2%;
+}
+
+.landing-page{
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+}

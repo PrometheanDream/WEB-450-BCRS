@@ -1,0 +1,15 @@
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+
+html,body{
+    height: 100%;
+    background: #616161;
+}
+
+body{
+    margin: 0%;
+}
+
+.md{
+   color:white;
+   text-decoration: none;
+}

@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+
+<mat-card>
+    <h3>Update User Information</h3>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <mat-card-content>
+  
+        <mat-form-field>
+          <input matInput placeholder="First Name" type="text" [value]="user.first_name" [formControl]="form.controls['firstname']" />
+        </mat-form-field><br>
+  
+        <mat-form-field>
+          <input matInput placeholder="Last Name" type="text" [value]="user.last_name" [formControl]="form.controls['lastname']" />
+        </mat-form-field><br>
+  
+        <mat-form-field>
+          <input matInput placeholder="Address" type="text" [value]="user.address" [formControl]="form.controls['address']" />
+        </mat-form-field>
+  
+        <br />
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </form>
+  </mat-card>
+
+

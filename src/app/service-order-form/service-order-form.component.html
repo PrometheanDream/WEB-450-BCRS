@@ -1,0 +1,53 @@
+
+
+<mat-card>
+  <h2>Service Repair Order Form </h2><br>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <mat-card-content>
+      <mat-form-field>
+        <input type="checkbox" (click)="updateCost1()" (ngModel)="checked" name="password_reset" [formControl]="form.controls['password_reset']" />
+        <span> Password Reset $15.00</span>
+      </mat-form-field><br>
+
+      <mat-form-field>
+        <input type="checkbox" (click)="updateCost2()" (ngModel)="checked" name="spyware_removal" [formControl]="form.controls['spyware_removal']" />
+        <span> Spyware Removal $25.00</span>
+      </mat-form-field><br>
+
+      <mat-form-field>
+        <input type="checkbox" (click)="updateCost3()" (ngModel)="checked" name="ramUpgrade" [formControl]="form.controls['ramUpgrade']" />
+        <span> RAM Upgrade $45.00</span>
+      </mat-form-field><br>
+
+      <mat-form-field>
+        <input type="checkbox" (click)="updateCost4()" (ngModel)="checked" name="software_install" [formControl]="form.controls['software_install']" />
+        <span> Software Install $50.00</span>
+      </mat-form-field><br>
+
+      <mat-form-field>
+        <input type="checkbox" (click)="updateCost5()" (ngModel)="checked" name="tuneUp" [formControl]="form.controls['tuneUp']" />
+        <span> Tune Up $45.00</span>
+      </mat-form-field><br>
+
+      <mat-form-field>
+        <input type="checkbox" (click)="updateCost6()" (ngModel)="checked" name="keyboardClean" [formControl]="form.controls['keyboardClean']" />
+        <span> Keyboard Clean $10.00</span>
+      </mat-form-field><br>
+
+      <mat-form-field>
+        <input type="checkbox" (click)="updateCost7()" (ngModel)="checked" name="diskClean" [formControl]="form.controls['diskClean']" />
+        <span> Disk Clean Up $25.00</span>
+      </mat-form-field><br><br>
+
+      <!-- <p>Total Cost: ${{ updatedCost * }}  </p> -->
+
+      <br />
+      <mat-card-actions>
+        <button mat-raised-button color="accent" type="submit" [routerLink]="['/service-invoice', service._id]"
+          [disabled]="!form.valid">Submit</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </form>
+
+</mat-card>
+

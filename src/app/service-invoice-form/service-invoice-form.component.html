@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<table mat-table [dataSource]="services" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="_id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let service">{{ service._id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="create_date">
+      <th mat-header-cell *matHeaderCellDef>Date Created</th>
+      <td mat-cell *matCellDef="let service">{{ service.create_date }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="order_total">
+      <th mat-header-cell *matHeaderCellDef>Order Total</th>
+      <td mat-cell *matCellDef="let service">${{ service.order_total * 10 }}.00</td>
+    </ng-container>
+
+    <ng-container matColumnDef="viewInvoice">
+        <th mat-header-cell *matHeaderCellDef>View Invoice Summary</th>
+        <td mat-cell *matCellDef="let service">
+            <button mat-icon-button [routerLink]="['/service-order-view', service._id]">
+              <mat-icon>mail_outline</mat-icon>
+            </button>
+        </td>
+      </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
