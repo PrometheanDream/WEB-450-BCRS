@@ -8,16 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./route-logs-page.component.css']
 })
 export class RouteLogsPageComponent implements OnInit {
-  logs: any
-  displayedColumns: string[] = ['when', 'from', 'status', 'what'];
+  logs: Array<string> = [];
+  displayedColumns: string[] = ['log'];
   string: any
   objects: any
 
   constructor(private http: HttpClient, private router: Router) {
     
     this.http.get('/api/logs', {responseType: 'text'})
-    .subscribe(data => { this.logs = data },
-       this.string = this.logs.split('\n'));
+    .subscribe(data => { this.logs = data.split('\n');
+          },
+            err => {
+              console.log(err);
+                  }
+              );
     
     
 

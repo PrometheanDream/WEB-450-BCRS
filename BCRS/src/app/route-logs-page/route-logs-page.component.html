@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 
-<table mat-table [dataSource]="string" class="mat-elevation-z8">
+<table mat-table [dataSource]="logs" class="mat-elevation-z8">
 
-  <ng-container matColumnDef="when">
+  <ng-container matColumnDef="log">
     <th mat-header-cell *matHeaderCellDef>Log Entries</th>
     <td mat-cell *matCellDef="let log">{{ log }}</td>
   </ng-container>

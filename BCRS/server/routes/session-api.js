@@ -52,7 +52,7 @@ router.put('/new-password', function(req, res, next){
     password: hashedPassword,
   }
 
-  User.findOneAndUpdate({'email': email }, {password: user.password}, function(err, user) {
+  User.findOneAndUpdate({'email': user.email }, {password: user.password}, function(err, user) {
     
     if (err) return res.status(500).send('There was a problem updating the password.')
 

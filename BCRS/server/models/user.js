@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const moment = require('moment')
 
 var userSchema = new mongoose.Schema({
-  email: { type: String, unique: true, dropDups: true },
+  email: { type: String },
   password: { type: String },
   first_name: { type: String },
   last_name: { type: String },
