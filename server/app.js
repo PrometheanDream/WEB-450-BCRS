@@ -48,8 +48,8 @@ let app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ 'extended': 'true'}));
 app.use(cors());
-app.use(express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
-app.use('/', express.static(path.join(__dirname, '../dist/WEB-450-BCRS')));
+app.use(express.static(path.join(__dirname, '../dist/web-450-bcrs')));
+app.use('/', express.static(path.join(__dirname, '../dist/web-450-bcrs')));
 app.use(morgan('combined', {stream: accessLogStream}));
 
 //routes to users-api file
