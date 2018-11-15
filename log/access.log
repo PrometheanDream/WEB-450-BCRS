@@ -2725,3 +2725,4 @@
 ::1 - - [15/Nov/2018:15:21:54 +0000] "GET /api/user HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"
 ::1 - - [15/Nov/2018:15:21:56 +0000] "GET /api/user HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"
 ::1 - - [15/Nov/2018:15:21:57 +0000] "GET /api/user HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"
+::1 - - [15/Nov/2018:16:12:54 +0000] "GET /node_modules/chart.js/src/chart.js HTTP/1.1" 404 9 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"
