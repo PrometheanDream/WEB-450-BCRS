@@ -12,7 +12,7 @@ import { FormBuilder } from '@angular/forms';
 // material components
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -23,6 +23,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 // custom app components
 import { UserComponent } from './user/user.component';
@@ -40,7 +41,6 @@ import { ServerErrorComponent } from './server-error/server-error.component';
 // session
 import { LocalStorageService } from 'ngx-webstorage';
 import { LoginComponent } from './login/login.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { ErrorComponent } from './error/error.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -58,7 +58,6 @@ import { ServiceSalesGraphComponent } from './service-sales-graph/service-sales-
     UserCreateComponent,
     SecurityQuestionnaireComponent,
     LoginComponent,
-    NotFoundComponent,
     ErrorComponent,
     AboutUsComponent,
     ContactUsComponent,
@@ -88,13 +87,14 @@ import { ServiceSalesGraphComponent } from './service-sales-graph/service-sales-
     MatFormFieldModule,
     MatSidenavModule,
     MatListModule,
+    MatSnackBarModule,
     RouterModule,
     MatSelectModule,
     MatTableModule,
     MatCheckboxModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false }),
   ],
-  providers: [ LocalStorageService ],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

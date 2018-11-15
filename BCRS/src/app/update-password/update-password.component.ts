@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
-import {Router} from '@angular/router';
-import {SessionService} from '../session.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { SessionService } from '../session.service';
 
 @Component({
   selector: 'app-update-password',
@@ -10,15 +10,15 @@ import {SessionService} from '../session.service';
   styleUrls: ['./update-password.component.css']
 })
 export class UpdatePasswordComponent implements OnInit {
-user: any
+  user: any
 
   constructor(private http: HttpClient, private router: Router) {
     this.http.put('/api/update-password', this.user)
       .subscribe(res => {
-        this.user = res; 
-        this.router.navigateByUrl('/session/login'), (err) => {console.log(err)}
-    });
-   }
+        this.user = res;
+        this.router.navigateByUrl('/session/login'), (err) => { console.log(err) }
+      });
+  }
 
   ngOnInit() {
   }
