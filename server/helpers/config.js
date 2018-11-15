@@ -4,7 +4,7 @@ let config = {};
  * Localhost web server configurations
  */
 config.web = {};
-config.web.port = process.env.PORT || '3000';
+config.web.port = process.env.PORT || '5000';
 config.web.secret = 'topsecret';
 
 
