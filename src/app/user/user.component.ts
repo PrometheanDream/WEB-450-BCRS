@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
       'x-access-token': this.token
     })
 
-    this.http.get('http://localhost:3000/api/user', {headers} ).subscribe(data => {
+    this.http.get('/api/user', {headers} ).subscribe(data => {
       this.users = data
     });
   }

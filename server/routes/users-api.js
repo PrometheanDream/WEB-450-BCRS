@@ -18,7 +18,7 @@ const utils = require('../helpers/check-token')
 
 // GET
 //router.get('/', utils.checkToken, function(req, res, next) {
-router.get('/', utils.checkToken, function(req, res, next) {
+router.get('/', function(req, res, next) {
   User.find({}, function( err, users) {
     if (err) return next(err)
     res.json(users)
@@ -107,7 +107,7 @@ router.put('/:id', function(req, res, next) {
 // POST for account management
 // use this to protect and check token
 //router.post('/', utils.checkToken, function(req, res, next) {
-router.post('/', utils.checkToken, function(req, res, next) {
+router.post('/', function(req, res, next) {
 
   var newUser = new User ({
     email: req.body.email,

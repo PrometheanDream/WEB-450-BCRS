@@ -24,7 +24,7 @@ services: any
       'x-access-token': this.token
     })
 
-    this.http.get('http://localhost:3000/api/services', {headers} ).subscribe(data => {
+    this.http.get('/api/services', {headers} ).subscribe(data => {
       this.services = data
     });
    }
