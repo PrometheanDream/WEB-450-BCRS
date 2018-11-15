@@ -18,7 +18,7 @@ export class ServiceSalesGraphComponent implements OnInit {
   aggregates: any
   aggregate: any
 
-  barChartData: number[] = [];
+  //barChartData: any[] = [];
   
   //for barchart
   public barChartOptions:any = {
@@ -39,12 +39,12 @@ export class ServiceSalesGraphComponent implements OnInit {
   //chart columns and data
    barChartLabels:string[] = ['Password Resets', 'Spyware Removals', 
   'Ram Upgrades', 'Software Installs', 'Tune Ups', 'Cleaned Keyboards', 
-  'Cleaned Disks', 'Total $ in Hundreds'];
+  'Cleaned Disks', 'Total $ x 10'];
   
   //chart data copy before messing with it
-  //public barChartData:any[] = [
-    //{data: [65, 59, 80, 81, 56, 55, 40, 3], label: 'Units Sold'}
-  //];
+  public barChartData:any[] = [
+    {data: [0, 0, 0, 0, 0, 0, 0, 0], label: 'Units Sold'}
+  ];
   
   constructor(private http: HttpClient, private router: Router, private sessionService: SessionService) {
       

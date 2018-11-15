@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {SessionService} from '../session.service';
 import {ActivatedRoute} from '@angular/router';
@@ -15,20 +15,35 @@ form: FormGroup
 service: any
 id: string
 checked: boolean
+token: string
+services: any
 
 
 //used to calculate order total
 totalCost = 0;
-cost1 = 15;
-cost2 = 25;
-cost3 = 45;
-cost4 = 50; 
-cost5 = 45;
-cost6 = 10;
-cost7 = 25;
+cost1 = 1.5;
+cost2 = 2.5;
+cost3 = 4.5;
+cost4 = 5.0; 
+cost5 = 4.5;
+cost6 = 1.0;
+cost7 = 2.5;
 
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private http: HttpClient, private router: Router, private sessionService: SessionService) { }
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private http: HttpClient, private router: Router, private sessionService: SessionService) { 
+
+  this.token = sessionService.getLocalStorage()
+
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'x-access-token': this.token
+  })
+
+  this.http.get('http://localhost:3000/api/services', {headers} ).subscribe(data => {
+    this.services = data
+  });
+ }
+  
 
 
   ngOnInit() {
