@@ -87,8 +87,8 @@ app.use(function (err, req, res, next) {
   res.sendStatus(err.status);
 });
 
-http.createServer(app).listen(5000, function() {
-  console.log('Application started and listening on port 5000');
+http.createServer(app).listen(3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
 
