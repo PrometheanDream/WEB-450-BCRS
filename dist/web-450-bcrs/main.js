@@ -1485,7 +1485,7 @@ var ServiceInvoiceFormComponent = /** @class */ (function () {
             'Content-Type': 'application/json',
             'x-access-token': this.token
         });
-        this.http.get('http://localhost:3000/api/services', { headers: headers }).subscribe(function (data) {
+        this.http.get('/api/services', { headers: headers }).subscribe(function (data) {
             _this.services = data;
         });
     }
@@ -2286,7 +2286,7 @@ var UserComponent = /** @class */ (function () {
             'Content-Type': 'application/json',
             'x-access-token': this.token
         });
-        this.http.get('http://localhost:3000/api/user', { headers: headers }).subscribe(function (data) {
+        this.http.get('/api/user', { headers: headers }).subscribe(function (data) {
             _this.users = data;
         });
     }
